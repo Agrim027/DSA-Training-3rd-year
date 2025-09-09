@@ -19,24 +19,40 @@ int main() {
     // }
 
     //Given an array of N integers and a positive number k. Swap every k element with next k element. N is a multiple of 2k
-    int n, k;
-    cin>>n>>k;
+    // int n, k;
+    // cin>>n>>k;
+    // vector<int> arr;
+    // for(int i=0; i<n; i++){
+    //     int x;
+    //     cin>>x;
+    //     arr.push_back(x);
+    // }
+    // int cnt=0;
+    // for(int i=0; i<n; i++){
+    //     cnt++;
+    //     swap(arr[i],arr[i+k]);
+    //     if(cnt==k){
+    //         i = i+k;
+    //         cnt=0;
+    //     }
+        
+    // }
+    // for(int i=0; i<n; i++){
+    //     cout<<arr[i]<<" ";
+    // }
+
+     // Given an integer add a having N element. Find the number of occurrence of 1, and remove the element add the index, which is equal to the number of occurrence of 1. Print the modified array given that count of 1 is less than N
+    int n;
+    cin>>n;
     vector<int> arr;
     for(int i=0; i<n; i++){
         int x;
         cin>>x;
         arr.push_back(x);
     }
-    int cnt=0;
-    for(int i=0; i<n; i++){
-        cnt++;
-        swap(arr[i],arr[i+k]);
-        if(cnt==k){
-            i = i+k;
-            cnt=0;
-        }
-        
-    }
+    int cnt = count(arr.begin(), arr.end(),1);
+    cout<<cnt;
+    arr.erase(arr.begin()+cnt);
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
