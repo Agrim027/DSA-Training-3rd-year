@@ -32,27 +32,53 @@ int main() {
 
 
     //Find SubMatrix of a Matrix
-     int rows, cols;
-    cin >> rows >> cols;
+    //  int rows, cols;
+    // cin >> rows >> cols;
 
-    vector<vector<int>> matrix(rows, vector<int>(cols));
+    // vector<vector<int>> matrix(rows, vector<int>(cols));
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    // for (int i = 0; i < rows; i++) {
+    //     for (int j = 0; j < cols; j++) {
+    //         cin >> matrix[i][j];
+    //     }
+    // }
+
+    // int r1, c1, r2, c2;
+    // cin >> r1 >> c1;                   // 1 1
+    // cin >> r2 >> c2;                   // 3 4
+
+    // cout << "Submatrix is:\n";
+    // for (int i = r1; i <= r2; i++) {
+    //     for (int j = c1; j <= c2; j++) {
+    //         cout << matrix[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    //Swap The Numbers
+    int n, m, k;
+    cin>>n>>m>>k;
+
+    vector<vector<int>> matrix(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
             cin >> matrix[i][j];
         }
     }
+    for (int i = 0; i < n / 2; i++) {
+        int opposite = n - i - 1;
+        for (int j = 0; j < k; j++) {
+            swap(matrix[i][m - k + j], matrix[opposite][j]);
+        }
+    }
 
-    int r1, c1, r2, c2;
-    cin >> r1 >> c1;                   // 1 1
-    cin >> r2 >> c2;                   // 3 4
-
-    cout << "Submatrix is:\n";
-    for (int i = r1; i <= r2; i++) {
-        for (int j = c1; j <= c2; j++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
             cout << matrix[i][j] << " ";
         }
         cout << endl;
     }
+
+    return 0;
     
 }
