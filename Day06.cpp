@@ -56,24 +56,54 @@ int main() {
     // }
 
     //Swap The Numbers
-    int n, m, k;
-    cin>>n>>m>>k;
+    // int n, m, k;
+    // cin>>n>>m>>k;
 
+    // vector<vector<int>> matrix(n, vector<int>(m));
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < m; j++) {
+    //         cin >> matrix[i][j];
+    //     }
+    // }
+    // for (int i = 0; i < n / 2; i++) {
+    //     int opposite = n - i - 1;
+    //     for (int j = 0; j < k; j++) {
+    //         swap(matrix[i][m - k + j], matrix[opposite][j]);
+    //     }
+    // }
+
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < m; j++) {
+    //         cout << matrix[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    // return 0;
+
+
+     
+    //Swap matrix element with its immediate bottom
+    
+    int n, m;
+    cin >> n >> m;
     vector<vector<int>> matrix(n, vector<int>(m));
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
             cin >> matrix[i][j];
         }
     }
-    for (int i = 0; i < n / 2; i++) {
-        int opposite = n - i - 1;
-        for (int j = 0; j < k; j++) {
-            swap(matrix[i][m - k + j], matrix[opposite][j]);
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            if(i + 1 < n && j + 1 < m) {
+                swap(matrix[i][j], matrix[i+1][j+1]);
+            }
         }
     }
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
             cout << matrix[i][j] << " ";
         }
         cout << endl;
