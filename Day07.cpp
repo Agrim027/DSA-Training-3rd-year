@@ -63,6 +63,14 @@ int main() {
             }
         }
     }
-
     cout << maxChar << " "<< maxASCII << endl;
+
+
+    //SubString   s.substr
+    int n, k;
+    cin>>n>>k;
+    string str;
+    cin>>str;
+    string ans = str.substr(k,2*k-1);
+    cout<<ans;
 }
