@@ -46,4 +46,23 @@ int main() {
     }
 
     cout << count << endl;
+
+    // You are given an integer N representing the number of words, followed by N space-separated words. Your task is to read these words and determine the character that has the highest ASCII (SI) value among all the characters present in the words. Finally, print this character followed by its ASCII value separated by a space.
+     int n;
+    cin>>n;
+    char maxChar = '\0';
+    int maxASCII = -1;
+
+    for (int i = 0; i <n; i++) {
+        string word;
+        cin >> word;
+        for (char c : word) {
+            if ((int)c > maxASCII) {
+                maxASCII = (int)c;
+                maxChar = c;
+            }
+        }
+    }
+
+    cout << maxChar << " "<< maxASCII << endl;
 }
