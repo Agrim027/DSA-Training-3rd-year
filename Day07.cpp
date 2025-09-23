@@ -26,4 +26,24 @@ int main() {
     }
 
     cout<< result;
+
+
+
+    // Given a string (str) of length K N2 integers N&M count the number of characters whose SI values is within the range defined by NM both inclusive given that N is less than M
+
+    int k, n, m;               //15 67 75
+    cin>>k;
+    cin>>n>>m;
+    string str;                  //AB*abXYDEF#@pqr
+    cin>>str;
+
+
+    int count = 0;
+    for (char ch : str) {
+        if (n <= (int)ch && (int)ch <= m) {
+            count++;
+        }
+    }
+
+    cout << count << endl;
 }
