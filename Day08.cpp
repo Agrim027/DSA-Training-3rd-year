@@ -41,4 +41,24 @@ int main() {
             cout << str[i].substr(n - k[i]) + str[i].substr(0, n - k[i]) << "\n";
         }
     }
+
+
+// 	reverse(str.begin(),str.end());
+ 
+// Given a string S of length and and and integer K create a new string in the following fashion pick first K characters as it is followed by next K characters in rev....can assume that N is a multiple of 2K
+    int n, k;
+    cin >>n>>k;
+    string str;
+    cin>>str;
+
+    string result = "";
+    for(int i=0; i<n; i += k){
+        string part = str.substr(i, k);
+        if((i/k)%2 == 1){
+            reverse(part.begin(), part.end());
+        }
+        result = result + part;
+    }
+
+    cout<<result;
 }
