@@ -61,4 +61,16 @@ int main() {
     }
 
     cout<<result;
+
+
+    //Check whether the given string palindrome or not, using reverse() funct
+    string str;
+    cin>>str;
+    string rev = str;
+    reverse(rev.begin(), rev.end());
+
+    if (str == rev)
+        cout<<"True";
+    else
+        cout<<"False";
 }
