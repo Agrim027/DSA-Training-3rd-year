@@ -73,4 +73,28 @@ int main() {
         cout<<"True";
     else
         cout<<"False";
+
+
+//given two string with their length and k position, rotate right s1 and rotate left s2, then merge both s1 and s2 to check whether it is plaindrome or not
+    int x, y, k;
+    cin>>x>>y>>k;              // 5 4 3
+    string s1;                 // abcde
+    string s2;                 // abcd
+    cin>>s1;
+    cin>>s2;
+
+    int n = s1.length(); 
+    
+    s1 = s1.substr(n-k) + s1.substr(0, n-k);   //right
+    s2 = s2.substr(k) + s2.substr(0, k);       //left
+    string str = s1+s2;
+    
+    string rev = str;
+    reverse(rev.begin(), rev.end());
+    
+    cout<<str;
+    if(str == rev)
+        cout<<" True";
+    else
+        cout<<" False";
 }
