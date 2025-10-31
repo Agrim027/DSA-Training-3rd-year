@@ -86,5 +86,30 @@ int main() {
         cout<< "true";
     else
         cout<<"False";
+
+
+    //Compress Recurrence
+    string s;                      // i/p -   aaabbsdfgfdhaaaaaa    3
+    cin >> s;                      // o/p -   a3bbsdfgfdha6
+    int n;
+    cin >> n;
+
+    string ans = "";
+    int cnt = 1;
+    for (int i = 1; i <= s.size(); i++) {
+        if (i < s.size() && s[i] == s[i - 1]) {
+            cnt++;
+        } else {
+            if (cnt >= n) {
+                ans += s[i - 1];
+                ans += to_string(cnt);
+            } else {
+                ans.append(cnt, s[i - 1]);
+            }
+            cnt = 1;
+        }
+    }
+
+    cout << ans;
     
 }
