@@ -37,7 +37,7 @@ int main() {
 
     //Reverse Letters Only
     string s;
-    cin>>s;
+    getline(cin, s);
     int l = 0, r = s.size() - 1;
     while (l < r) {
         if (!isalpha(s[l])) l++;
