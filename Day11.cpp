@@ -68,5 +68,23 @@ int main() {
     cout << (isPalindrome(T) ? "true" : "false");
 
     return 0;
+
+
+    //Abbreviation             
+    string s, r;                 //i/p -  boulverad   blvd
+    cin>>s>>r;                   // o/p -    true
+    int cnt =0;
+    int i=0;
+    while(i<s.size()){
+        char c = s[i];
+        if(c == r[cnt]){
+            cnt++;
+        }
+        i++;
+    }
+    if(cnt>=3 && cnt<=5)
+        cout<< "true";
+    else
+        cout<<"False";
     
 }
