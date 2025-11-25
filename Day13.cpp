@@ -34,5 +34,29 @@ int main() {
     for(auto x : vec){
         cout<<x.first<< " : "<< x.second<<endl;
     }
+
+
+
+    //Ques./ Print product of count of unique and non-unique elements
+
+    int n;                                //11
+    cin>>n;                               // 10 2 3 4 2 5 6 4 2 3 6
+    unordered_map<int , int> mpp;
+    for(int i=0; i<n; i++){
+        int x;
+        cin>>x;
+        mpp[x]++;
+        
+    }
+    int uni = 0;
+    int non_uni = 0;
+    for(auto it:mpp){
+        if(it.second>1){
+            uni++;
+        }
+    }
+    non_uni = mpp.size()-uni;
+    
+    cout<< non_uni * uni;
     
 }
