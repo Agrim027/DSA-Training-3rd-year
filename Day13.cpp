@@ -16,7 +16,10 @@ int main() {
     // map.first -> keys
     // map.second -> value
     
-    
+
+
+    // Ques./ given n integers. Create a dictionary with the inetegers as keys and squars of the integers as values.
+    //        print the key in sorted order and associated value separated  by space
     int n;
     cin>>n;
     unordered_map<int , int> mpp;
